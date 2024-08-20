@@ -13,7 +13,7 @@ class MultiVideoDataset(Dataset):
 
         # Store video metadata (frame count, etc.)
         total_frames = 0
-        for video_path in video_paths:
+        for video_path in self.video_filepaths:
             cap = cv2.VideoCapture(video_path)
             frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
             self.video_metadata.append({
